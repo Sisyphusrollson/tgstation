@@ -208,15 +208,15 @@
 	icon_state = "coke"
 
 /obj/effect/decal/cleanable/coke/attack_hand(mob/living/M)
-	var/datum/reagent/vol = /datum/reagent/
+	var/datum/reagent/drug/synthetic_cocaine/reaction_turf/vol = /datum/reagent/drug/synthetic_cocaine/reaction_turf/
 	. = ..()
 	if(.)
 		return
 	if(ishuman(M))
-		M.reagents.add_reagent("synthetic_cocaine", vol.volume)
+		M.reagents.add_reagent("synthetic_cocaine", vol.reac)
 		to_chat(M, "<span class='notice'>You snort the cocaine.</span>")
 		Destroy()
 /obj/effect/decal/cleanable/coke/Initialize()
-	var/datum/reagent/vol = /datum/reagent/
+	var/datum/reagent/drug/synthetic_cocaine/reaction_turf/vol = /datum/reagent/drug/synthetic_cocaine/reaction_turf/
 	. = ..()
-	reagents.add_reagent("synthetic_cocaine", vol.volume)
+	reagents.add_reagent("synthetic_cocaine", vol.reac)

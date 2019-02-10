@@ -478,6 +478,7 @@
 	..()
 
 /datum/reagent/drug/synthetic_cocaine/reaction_turf(turf/T, reac_volume) //Creates a few coke lines
+	var/reac = reac_volume
 	if(!istype(T))
 		return
 	if(reac_volume < 5)
