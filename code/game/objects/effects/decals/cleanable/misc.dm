@@ -206,9 +206,9 @@
 	desc = "Get down, get down."
 	icon = 'icons/effects/coke.dmi'
 	icon_state = "coke"
-	var/datum/reagent/drug/synthetic_cocaine/vol = /datum/reagent/drug/synthetic_cocaine
-/obj/effect/decal/cleanable/coke/attack_hand(mob/living/M)
 
+/obj/effect/decal/cleanable/coke/attack_hand(mob/living/M)
+	var/datum/reagent/vol = /datum/reagent/
 	. = ..()
 	if(.)
 		return
@@ -217,5 +217,6 @@
 		to_chat(M, "<span class='notice'>You snort the cocaine.</span>")
 		Destroy()
 /obj/effect/decal/cleanable/coke/Initialize()
+	var/datum/reagent/vol = /datum/reagent/
 	. = ..()
 	reagents.add_reagent("synthetic_cocaine", vol.volume)
