@@ -480,7 +480,7 @@
 /datum/reagent/drug/synthetic_cocaine/reaction_turf(turf/T, reac_volume) //Creates a few coke lines
 	if(!istype(T))
 		return
-	if(reac_volume < 15)
+	if(reac_volume < 5)
 		return
 	new/obj/effect/decal/cleanable/coke(T)
 	..()
