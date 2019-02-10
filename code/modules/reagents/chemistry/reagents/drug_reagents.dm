@@ -478,14 +478,13 @@
 	..()
 
 /datum/reagent/drug/synthetic_cocaine/reaction_turf(turf/T, reac_volume) //Creates a few coke lines
-	var/reac = reac_volume
 	if(!istype(T))
 		return
 	if(reac_volume < 5)
 		return
 	new/obj/effect/decal/cleanable/coke(T)
 	..()
-
+	var/reac = reac_volume
 /datum/reagent/drug/synthetic_cocaine/overdose_process(mob/living/carbon/M)
 	M.dna.add_mutation(EPILEPSY)
 	M.adjustBrainLoss(0.5)
